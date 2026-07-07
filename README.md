@@ -1,0 +1,2 @@
+# cloud
+UAS MAGISTER KOMPUTER
