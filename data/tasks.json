@@ -1,0 +1,35 @@
+[
+  {
+    "id": "sample-1",
+    "title": "Menyusun rancangan arsitektur cloud",
+    "description": "Membuat diagram, alur data, dan alasan pemilihan teknologi.",
+    "status": "in-progress",
+    "priority": "high",
+    "assignee": "Analis Sistem",
+    "due_date": "2026-07-10",
+    "created_at": "2026-07-06T00:00:00.000Z",
+    "updated_at": "2026-07-06T00:00:00.000Z"
+  },
+  {
+    "id": "sample-2",
+    "title": "Deploy aplikasi ke Vercel",
+    "description": "Menghubungkan frontend, API, dan Supabase cloud database.",
+    "status": "todo",
+    "priority": "medium",
+    "assignee": "DevOps",
+    "due_date": "2026-07-15",
+    "created_at": "2026-07-06T00:00:00.000Z",
+    "updated_at": "2026-07-06T00:00:00.000Z"
+  },
+  {
+    "title": "rev api",
+    "description": "kerjakan tugas",
+    "status": "done",
+    "priority": "medium",
+    "assignee": "pablo",
+    "due_date": "2026-07-16",
+    "id": "6f98519f-8611-4548-bd23-199dafc39ea5",
+    "created_at": "2026-07-06T06:35:02.716Z",
+    "updated_at": "2026-07-06T06:35:02.716Z"
+  }
+]

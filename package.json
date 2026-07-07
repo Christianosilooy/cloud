@@ -1,0 +1,18 @@
+{
+  "name": "cloud-task-manager",
+  "version": "1.0.0",
+  "description": "Aplikasi manajemen tugas/proyek berbasis cloud untuk UAS Arsitektur Perangkat Lunak dan Data Berbasis Cloud.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/api.test.js"
+  },
+  "keywords": [
+    "cloud",
+    "task-manager",
+    "supabase",
+    "vercel"
+  ],
+  "author": "Kelompok Mahasiswa MTI",
+  "license": "MIT"
+}

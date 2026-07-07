@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cloud Task Manager</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Cloud Project Workspace</p>
+        <h1>Cloud Task Manager</h1>
+      </div>
+      <div class="summary" aria-label="Ringkasan tugas">
+        <span><strong id="totalTasks">0</strong> tugas</span>
+        <span><strong id="doneTasks">0</strong> selesai</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel form-panel" aria-labelledby="formTitle">
+        <h2 id="formTitle">Tambah Tugas</h2>
+        <form id="taskForm" novalidate>
+          <input type="hidden" id="taskId" />
+
+          <label>
+            Judul
+            <input id="title" name="title" minlength="3" required placeholder="Contoh: Review API" />
+          </label>
+
+          <label>
+            Deskripsi
+            <textarea id="description" name="description" rows="4" placeholder="Catatan singkat tugas"></textarea>
+          </label>
+
+          <div class="grid-2">
+            <label>
+              Status
+              <select id="status" name="status" required>
+                <option value="todo">Todo</option>
+                <option value="in-progress">In Progress</option>
+                <option value="done">Done</option>
+              </select>
+            </label>
+
+            <label>
+              Prioritas
+              <select id="priority" name="priority" required>
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="grid-2">
+            <label>
+              Penanggung jawab
+              <input id="assignee" name="assignee" placeholder="Nama anggota" />
+            </label>
+
+            <label>
+              Tenggat
+              <input id="due_date" name="due_date" type="date" />
+            </label>
+          </div>
+
+          <p class="message" id="formMessage" role="status"></p>
+
+          <div class="actions">
+            <button class="primary" type="submit">Simpan</button>
+            <button class="ghost" type="button" id="resetButton">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel task-panel" aria-labelledby="taskTitle">
+        <div class="panel-heading">
+          <div>
+            <h2 id="taskTitle">Daftar Tugas</h2>
+            <p>Data dibaca dari API dan disimpan pada database/cloud storage.</p>
+          </div>
+          <button class="ghost" type="button" id="refreshButton">Refresh</button>
+        </div>
+        <div class="toolbar">
+          <button class="filter active" data-filter="all" type="button">Semua</button>
+          <button class="filter" data-filter="todo" type="button">Todo</button>
+          <button class="filter" data-filter="in-progress" type="button">Progress</button>
+          <button class="filter" data-filter="done" type="button">Done</button>
+        </div>
+        <div id="taskList" class="task-list" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <template id="taskTemplate">
+      <article class="task-card">
+        <div class="task-main">
+          <div>
+            <h3></h3>
+            <p class="description"></p>
+          </div>
+          <span class="badge"></span>
+        </div>
+        <dl class="meta">
+          <div>
+            <dt>PIC</dt>
+            <dd class="assignee"></dd>
+          </div>
+          <div>
+            <dt>Tenggat</dt>
+            <dd class="due"></dd>
+          </div>
+          <div>
+            <dt>Prioritas</dt>
+            <dd class="priority"></dd>
+          </div>
+        </dl>
+        <div class="card-actions">
+          <button class="ghost edit" type="button">Edit</button>
+          <button class="danger delete" type="button">Hapus</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
